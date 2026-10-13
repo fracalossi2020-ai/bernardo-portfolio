@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bernardo Moraes — Sistemas, automação e delivery</title>
+<meta name="description" content="Bernardo Moraes: desenvolvedor de sistemas, automações e plataformas de delivery.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <canvas id="loaderCanvas" class="loader__canvas"></canvas>
+  <div class="loader__content">
+    <div class="loader__name" id="loaderName">
+      <i>B</i><i>E</i><i>R</i><i>N</i><i>A</i><i>R</i><i>D</i><i>O</i>
+    </div>
+    <div class="loader__bar">
+      <svg class="loader__ring" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="54" class="loader__ring-bg"/>
+        <circle cx="60" cy="60" r="54" class="loader__ring-fg" id="loaderRing"/>
+      </svg>
+      <span class="loader__pct" id="loaderPct">0%</span>
+    </div>
+  </div>
+</div>
+
+<div class="noise-overlay"></div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#top" class="logo">
+      <span class="logo__mark">BM</span>
+      <span class="logo__text">Bernardo<em>.dev</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#paradevs">Para devs</a>
+      <a href="#comofunciona">Como funciona</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header__actions">
+      <a href="https://github.com/fracalossi2020-ai" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.17c-3.2.69-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.15v3.19c0 .3.2.65.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg" id="heroBg"></div>
+    <div class="container hero__inner">
+      <p class="eyebrow" data-reveal>PRAZER, SOU</p>
+      <h1 class="hero__name shine-text" data-reveal id="heroName">BERNARDO</h1>
+      <p class="hero__desc" data-reveal>
+        e eu construo os sistemas que fazem o seu negócio rodar sozinho — painéis de gestão, automações no WhatsApp/Telegram e plataformas de delivery, do código ao servidor no ar.
+      </p>
+      <div class="hero__actions" data-reveal>
+        <a href="https://wa.me/5531971075127?text=Oi%20Bernardo%2C%20vim%20pelo%20seu%20portf%C3%B3lio!" target="_blank" rel="noopener" class="btn btn--primary magnetic">
+          <span>Solicitar orçamento</span>
+        </a>
+        <a href="#projetos" class="btn btn--ghost">Ver projetos</a>
+      </div>
+    </div>
+    <div class="hero__marquee" aria-hidden="true">
+      <div class="hero__marquee-track">
+        <span>Sistemas sob medida</span><span>•</span><span>Automação no WhatsApp</span><span>•</span>
+        <span>Plataformas de delivery</span><span>•</span><span>Bots de afiliados</span><span>•</span>
+        <span>Dashboards &amp; relatórios</span><span>•</span><span>Deploy &amp; hospedagem</span><span>•</span>
+        <span>Sistemas sob medida</span><span>•</span><span>Automação no WhatsApp</span><span>•</span>
+        <span>Plataformas de delivery</span><span>•</span><span>Bots de afiliados</span><span>•</span>
+        <span>Dashboards &amp; relatórios</span><span>•</span><span>Deploy &amp; hospedagem</span><span>•</span>
+      </div>
+    </div>
+    <div class="scroll-cue"><span></span>role</div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title" data-reveal>Faço ideias de negócio virarem sistema de verdade.</h2>
+      <div class="services__grid">
+        <div class="services__point" data-reveal>
+          <span class="services__num">01</span>
+          <h3>Feito sob medida.</h3>
+          <p>Nada de template genérico — cada painel é desenhado pra como o seu negócio realmente funciona.</p>
+        </div>
+        <div class="services__point" data-reveal>
+          <span class="services__num">02</span>
+          <h3>Automação de ponta a ponta.</h3>
+          <p>WhatsApp, Telegram, pagamentos e relatórios conversando entre si, sem trabalho manual.</p>
+        </div>
+        <div class="services__point" data-reveal>
+          <span class="services__num">03</span>
+          <h3>Suporte direto comigo.</h3>
+          <p>Sem ticket, sem intermediário. Você fala comigo e o ajuste sai do mesmo dia.</p>
+        </div>
+      </div>
+      <div class="tags" data-reveal>
+        <span>Backend</span><span>Automação</span><span>UI/UX</span><span>Cloud</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="container about__grid">
+      <div data-reveal>
+        <span class="section-kicker">[ 01 ] SOBRE</span>
+        <h2 class="section-title">Quem programa o sistema é quem sobe ele no ar.</h2>
+      </div>
+      <div class="about__text" data-reveal>
+        <p>Eu sou o Bernardo. Desenvolvo sistemas de gestão, automações e plataformas de delivery do zero — pensando em como a rotina do negócio realmente acontece, não em como seria "bonito no papel".</p>
+        <p>Já construí sistemas para condomínios, restaurantes e afiliados: do painel administrativo ao bot que atende no WhatsApp, passando pelo deploy em produção.</p>
+        <p>Trabalho sozinho em cada projeto, do briefing ao ar, o que significa menos ruído e mais entrega.</p>
+        <ul class="about__list">
+          <li>Desenvolvedor full-stack + automação</li>
+          <li>Projetos sob medida, do zero ao deploy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="projects" id="projetos">
+    <div class="container">
+      <span class="section-kicker" data-reveal>[ 02 ] PROJETOS</span>
+      <h2 class="section-title" data-reveal>Sistemas no ar, rodando de verdade.</h2>
+
+      <div class="projects__grid">
+        <a class="card tilt-card" data-reveal href="https://condoflow-production-ee05.up.railway.app/" target="_blank" rel="noopener">
+          <div class="card__glow"></div>
+          <span class="card__tag">Gestão condominial</span>
+          <h3 class="card__title">CondoFlow</h3>
+          <p class="card__desc">Plataforma completa pra síndicos e moradores: financeiro, reservas de áreas comuns, avisos, documentos e chamados de manutenção em um só lugar.</p>
+          <span class="card__link">Ver projeto →</span>
+        </a>
+
+        <a class="card tilt-card" data-reveal href="https://nexobg.com.br/" target="_blank" rel="noopener">
+          <div class="card__glow"></div>
+          <span class="card__tag">Gestão de delivery</span>
+          <h3 class="card__title">Nexo</h3>
+          <p class="card__desc">Painel de gestão pra restaurantes e delivery: cardápio digital, pedidos (até pelo WhatsApp), clientes, financeiro e relatórios — sem comissão sobre as vendas.</p>
+          <span class="card__link">Ver projeto →</span>
+        </a>
+
+        <a class="card tilt-card" data-reveal href="https://foodcourt.nexobg.com.br/" target="_blank" rel="noopener">
+          <div class="card__glow"></div>
+          <span class="card__tag">Marketplace de comida</span>
+          <h3 class="card__title">Food Court</h3>
+          <p class="card__desc">Plataforma de delivery onde o cliente escolhe restaurante, monta o carrinho e finaliza o pedido — com portal próprio pra cada restaurante parceiro.</p>
+          <span class="card__link">Ver projeto →</span>
+        </a>
+
+        <a class="card tilt-card" data-reveal href="https://nexoafiliados.com/" target="_blank" rel="noopener">
+          <div class="card__glow"></div>
+          <span class="card__tag">Automação / bot</span>
+          <h3 class="card__title">Nexo Afiliados</h3>
+          <p class="card__desc">Bot que monitora grupos de WhatsApp e canais do Telegram, troca o link da oferta pelo seu de afiliado e posta automaticamente com foto e preço — 13 lojas suportadas.</p>
+          <span class="card__link">Ver projeto →</span>
+        </a>
+
+        <a class="card card--cta tilt-card" data-reveal href="https://wa.me/5531971075127?text=Oi%20Bernardo%2C%20quero%20um%20sistema%20pro%20meu%20negócio!" target="_blank" rel="noopener">
+          <div class="card__glow"></div>
+          <h3 class="card__title">O próximo pode ser o seu.</h3>
+          <p class="card__desc">Tem um negócio que precisa de um sistema ou automação? Vamos conversar.</p>
+          <span class="card__link card__link--cta">Pedir orçamento →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA DEVS -->
+  <section class="fordevs" id="paradevs">
+    <div class="fordevs__aurora"></div>
+    <div class="container">
+      <div class="fordevs__top" data-reveal>
+        <span class="fordevs__lead">É dev? Conheça os efeitos que uso nas minhas interfaces.</span>
+        <div class="fordevs__top-links">
+          <a href="https://github.com/fracalossi2020-ai" target="_blank" rel="noopener" class="chip-link">GitHub ↗</a>
+          <a href="#projetos" class="chip-link chip-link--solid">Ver em produção ↗</a>
+        </div>
+      </div>
+
+      <div class="fordevs__showcase" data-reveal>
+        <h2 class="fordevs__word shine-text" id="fxWord">Brilho</h2>
+        <div class="fordevs__showcase-meta">
+          <span id="fxWordLabel">brilho no texto</span>
+          <span class="fordevs__showcase-counter"><em id="fxWordIndex">01</em>/10 · para devs</span>
+        </div>
+      </div>
+
+      <div class="fx-strip" data-reveal>
+        <div class="fx-strip__track">
+          <div class="fx-chip"><span class="fx-chip__n">01</span><span class="fx-glow">Aa</span></div>
+          <div class="fx-chip"><span class="fx-chip__n">02</span><span class="fx-scramble" id="fxScramble">BM</span></div>
+          <div class="fx-chip"><span class="fx-chip__n">03</span><span class="fx-rise" id="fxRise"></span></div>
+          <div class="fx-chip"><span class="fx-chip__n">04</span><span class="fx-type" id="fxType"></span><span class="fx-type__cursor">|</span></div>
+          <div class="fx-chip"><span class="fx-chip__n">05</span><button class="fx-magnet magnetic">hover</button></div>
+          <div class="fx-chip"><span class="fx-chip__n">06</span><div class="fx-rotor"><span>borda</span></div></div>
+          <div class="fx-chip fx-chip--glowcard tilt-card"><span class="fx-chip__n">07</span><div class="card__glow"></div><span>cartão</span></div>
+          <div class="fx-chip"><span class="fx-chip__n">08</span><div class="fx-tilt3d tilt-card"><span>tilt 3D</span></div></div>
+          <div class="fx-chip fx-chip--aurora"><span class="fx-chip__n">09</span><span>aurora</span></div>
+          <div class="fx-chip"><span class="fx-chip__n">10</span><span>scroll ↓</span></div>
+        </div>
+      </div>
+
+      <ol class="fx-list" data-reveal>
+        <li><span>01</span>Brilho no texto <em>(text shimmer)</em></li>
+        <li><span>02</span>Letras embaralhando <em>(letter scramble)</em></li>
+        <li><span>03</span>Revelar palavras <em>(word reveal)</em></li>
+        <li><span>04</span>Máquina de escrever <em>(typewriter)</em></li>
+        <li><span>05</span>Botão magnético <em>(magnetic button)</em></li>
+        <li><span>06</span>Borda girando <em>(rotating border)</em></li>
+        <li><span>07</span>Cartão com brilho <em>(glow card)</em></li>
+        <li><span>08</span>Inclinar em 3D <em>(3D tilt)</em></li>
+        <li><span>09</span>Fundo aurora <em>(aurora background)</em></li>
+        <li><span>10</span>Revelar no scroll <em>(scroll reveal)</em></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="how" id="comofunciona">
+    <div class="container">
+      <span class="section-kicker" data-reveal>[ 04 ] COMO FUNCIONA</span>
+      <h2 class="section-title" data-reveal>Da primeira mensagem ao sistema no ar.</h2>
+
+      <div class="how__steps">
+        <div class="how__step" data-reveal>
+          <span class="how__step-num">01</span>
+          <h3>A conversa</h3>
+          <p>Você me conta como o seu negócio funciona hoje e onde trava. Eu mapeio o que pode ser automatizado.</p>
+        </div>
+        <div class="how__step" data-reveal>
+          <span class="how__step-num">02</span>
+          <h3>A construção</h3>
+          <p>Monto o sistema por partes, te mostrando telas e fluxos reais conforme avança — sem surpresa no final.</p>
+        </div>
+        <div class="how__step" data-reveal>
+          <span class="how__step-num">03</span>
+          <h3>No ar</h3>
+          <p>Testamos junto, subo em produção com domínio próprio e fico disponível pra ajustes e manutenção.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contact" id="contato">
+    <div class="container contact__grid">
+      <div data-reveal>
+        <span class="section-kicker">[ 05 ] CONTATO</span>
+        <h2 class="section-title">Tem uma ideia? Bora tirar do papel.</h2>
+        <p class="contact__desc">Me manda uma mensagem contando o que você precisa — sistema, automação ou plataforma — e eu te respondo com os próximos passos.</p>
+        <div class="contact__links">
+          <a href="https://wa.me/5531971075127" target="_blank" rel="noopener" class="contact__link">
+            <span>WhatsApp</span><strong>(31) 97107-5127</strong>
+          </a>
+          <a href="https://github.com/fracalossi2020-ai" target="_blank" rel="noopener" class="contact__link">
+            <span>GitHub</span><strong>fracalossi2020-ai</strong>
+          </a>
+        </div>
+      </div>
+      <a href="https://wa.me/5531971075127?text=Oi%20Bernardo%2C%20quero%20falar%20sobre%20um%20projeto!" target="_blank" rel="noopener" class="contact__cta tilt-card" data-reveal>
+        <div class="card__glow"></div>
+        <span class="contact__cta-eyebrow">Resposta rápida</span>
+        <h3>Conversar no WhatsApp</h3>
+        <p>Clique e já abre a conversa direto comigo.</p>
+        <span class="card__link">Chamar agora →</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© <span id="year"></span> Bernardo Moraes — sistemas &amp; automação.</span>
+    <a href="#top" class="footer__top">Voltar ao topo ↑</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
