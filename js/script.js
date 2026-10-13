@@ -74,6 +74,100 @@
     setTimeout(finish, 4500);
   })();
 
+  /* ================= HERO PHOTO FALLBACK ================= */
+  (function heroPhoto() {
+    var img = document.getElementById("heroPhotoImg");
+    var fallback = document.getElementById("heroPhotoFallback");
+    if (!img) return;
+    var test = new Image();
+    test.onload = function () {
+      img.src = test.src;
+      img.style.display = "block";
+      if (fallback) fallback.style.display = "none";
+    };
+    test.onerror = function () {
+      img.style.display = "none";
+    };
+    test.src = img.getAttribute("src");
+    img.style.display = "none";
+  })();
+
+  /* ================= HERO PARTICLES ================= */
+  (function heroParticles() {
+    var canvas = document.getElementById("heroParticles");
+    if (!canvas || reduceMotion) return;
+    var ctx = canvas.getContext("2d");
+    var hero = canvas.closest(".hero");
+    var particles = [];
+    var mouse = { x: null, y: null };
+    var W, H;
+
+    function resize() {
+      W = canvas.width = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+      var count = Math.min(70, Math.floor((W * H) / 18000));
+      particles = [];
+      for (var i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3
+        });
+      }
+    }
+    resize();
+    window.addEventListener("resize", resize);
+
+    hero.addEventListener("mousemove", function (e) {
+      var rect = hero.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+    hero.addEventListener("mouseleave", function () {
+      mouse.x = null; mouse.y = null;
+    });
+
+    function step() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(function (p) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+
+        if (mouse.x !== null) {
+          var dx = p.x - mouse.x, dy = p.y - mouse.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 140) {
+            p.x += dx / dist * 0.6;
+            p.y += dy / dist * 0.6;
+          }
+        }
+      });
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var a = particles[i], b = particles[j];
+          var dx = a.x - b.x, dy = a.y - b.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.strokeStyle = "rgba(94,234,212," + (1 - dist / 120) * 0.25 + ")";
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+        ctx.fillStyle = "rgba(94,234,212,0.7)";
+        ctx.beginPath();
+        ctx.arc(particles[i].x, particles[i].y, 1.6, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      requestAnimationFrame(step);
+    }
+    step();
+  })();
+
   /* ================= HEADER SCROLL STATE ================= */
   var header = document.getElementById("header");
   function onScroll() {
